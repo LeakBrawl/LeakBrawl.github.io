@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Odliczanie do końca kadencji</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script>
-        $(document).ready(function(){
-        var countDownDate = new Date("Nov 12, 2023 00:00:00").getTime();
-        var x = setInterval(function(){
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-            var days = Math.floor(distance % (1000 * 60 * 60 * 24 * 30) / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            $("#timer").html("Nasza ukochana partia polityczna kończy kadencję za: " + months + " miesięcy, " + days + " dni, " + hours + " godzin, " + minutes + " minut i " + seconds + " sekund");
-            if (distance < 0) {
-            clearInterval(x);
-            $("#timer").html("Kadencja naszej partii politycznej już się zakończyła.");
+        <meta property="og:title" content="Odliczanie do końca kadencji PIS'u">
+        <meta property="og:description" content="#JazdaZKurwami">
+        <meta property="og:image" content="https://scontent-vie1-1.xx.fbcdn.net/v/t1.6435-9/193949071_335629331257471_1597583056284092794_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=97UxfP-khywAX_JuqMC&_nc_ht=scontent-vie1-1.xx&oh=00_AfDikjmVCcoVeyD-21_z6KCHJGQ3BxJznSrTGMb7ti4ACA&oe=6405E784">
+        <meta property="og:url" content="https://leakbrawl.github.io/">
+        <meta property="og:site_name" content="Odliczanie do końca kadencji PIS'u">
+        <meta property="og:type" content="website">
+        <title>Odliczanie do końca kadencji</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script>
+            $(document).ready(function(){
+            var countDownDate = new Date("Nov 12, 2023 00:00:00").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+                var days = Math.floor(distance % (1000 * 60 * 60 * 24 * 30) / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                $("#timer").html("Nasza ukochana partia polityczna kończy kadencję za: " + months + " miesięcy, " + days + " dni, " + hours + " godzin, " + minutes + " minut i " + seconds + " sekund");
+                if (distance < 0) {
+                clearInterval(x);
+                $("#timer").html("Kadencja naszej partii politycznej już się zakończyła.");
+                }
+            }, 1000);
+            });
+        </script>
+        <style>
+            body {
+                background-color: #f2f2f2;
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
             }
-        }, 1000);
-        });
-    </script>
-    <style>
-          body {
-            background-color: #f2f2f2;
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 36px;
-            margin-top: 50px;
-        }
-        
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        #timer {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+            
+            h1 {
+                color: #333;
+                font-size: 36px;
+                margin-top: 50px;
+            }
+            
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            #timer {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            }
+        </style>
     </head>
     <body>
-    <div class="container">
-        <h1 id="timer"></h1>
-    </div>
+        <div class="container">
+            <h1 id="timer"></h1>
+        </div>
     </body>
 </html>
